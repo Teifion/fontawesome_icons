@@ -7,7 +7,7 @@ Note: The library says it addresses a specific version of Fontawesome but this i
 ```elixir
 def deps do
   [
-    {:fontawesome_icons, "~> 0.0.1"}
+    {:fontawesome_icons, "~> 0.0.2"}
   ]
 end
 ```

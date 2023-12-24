@@ -15,7 +15,7 @@ defmodule Fontawesome do
   use Phoenix.Component
 
   attr(:icon, :string, required: true)
-  attr(:style, :string, default: nil)
+  attr(:style, :string, default: "regular")
   attr(:weight, :string, default: nil)
   attr(:size, :string, default: nil)
   attr(:class, :string, default: nil)
@@ -67,7 +67,7 @@ defmodule Fontawesome do
   defp free_style("fa-brand"), do: "fa-brand"
   defp free_style(""), do: ""
   defp free_style(nil), do: nil
-  defp free_style(_), do: "fa-regular"
+  defp free_style(_), do: "fa-solid"
 
   # Used to make the styling of icons limited to the free version
   defp free_weight(nil), do: nil
