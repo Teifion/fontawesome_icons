@@ -2,7 +2,7 @@ defmodule Fontawesome.MixProject do
   use Mix.Project
 
   @github_url "https://github.com/Teifion/fontawesome_icons"
-  @version "0.0.3"
+  @version "0.0.4"
 
   def project do
     [

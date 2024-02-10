@@ -1,3 +1,6 @@
+# v0.0.4
+- Moved to 0.0.4 because I made a mistake pushing 0.0.3
+
 # v0.0.3
 - Updated the liveview dependency
 - Fixed a test
