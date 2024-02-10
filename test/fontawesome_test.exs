@@ -44,12 +44,12 @@ defmodule FontawesomeTest do
     Application.put_env(:fontawesome, :free_only, true)
 
     html = Phoenix.LiveViewTest.render_component(&Fontawesome.icon/1, icon: "icon1")
-    assert html =~ "fa-fw fa-regular   fa-icon1"
+    assert html =~ "fa-fw fa-solid   fa-icon1"
 
     html =
       Phoenix.LiveViewTest.render_component(&Fontawesome.icon/1, icon: "icon2", weight: "sharp")
 
-    assert html =~ "fa-fw fa-regular   fa-icon2"
+    assert html =~ "fa-fw fa-solid   fa-icon2"
 
     Application.put_env(:fontawesome, :free_only, false)
   end
