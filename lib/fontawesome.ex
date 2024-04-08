@@ -1,7 +1,16 @@
 defmodule Fontawesome do
-  @moduledoc ~S"""
-  Example usage:
+  @moduledoc """
 
+  To add as a dependency in your `mix.exs`:
+  ```elixir
+  def deps do
+    [
+      {:fontawesome_icons, "~> 0.0.6"}
+    ]
+  end
+  ```
+
+  Example usage:
   ```
   <Fontawesome.icon icon="arrow-left" />
 
@@ -18,7 +27,7 @@ defmodule Fontawesome do
     free_only: true
   ```
 
-  Additionally contains a list of icons.
+  Additionally contains lists of icon names with `Fontawesome.standard_icons/0` and `Fontawesome.brand_icons/0`
   """
   use Phoenix.Component
 

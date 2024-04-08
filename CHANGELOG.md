@@ -1,3 +1,6 @@
+# v0.0.6
+- Further docs improvements
+
 # v0.0.5
 - Improved the docs
 
