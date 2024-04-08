@@ -1,7 +1,8 @@
 defmodule Fontawesome do
-  @moduledoc """
+  @moduledoc ~S"""
   Example usage:
 
+  ```
   <Fontawesome.icon icon="arrow-left" />
 
   <Fontawesome.icon icon="icon2" style="solid" />
@@ -9,6 +10,13 @@ defmodule Fontawesome do
   <Fontawesome.icon icon="another-icon" weight="sharp" />
 
   <Fontawesome.icon icon="everything" style="thin" weight="sharp" size="2x" class="my-css-class" css="border: 1px solid red;" />
+  ```
+
+  Has a single configuration option allowing you to register the free version only is used. When set this will (try to) override all non-free styling to be free only.
+  ```elixir
+  config :fontawesome,
+    free_only: true
+  ```
 
   Additionally contains a list of icons.
   """

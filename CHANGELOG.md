@@ -1,3 +1,6 @@
+# v0.0.5
+- Improved the docs
+
 # v0.0.4
 - Moved to 0.0.4 because I made a mistake pushing 0.0.3
 

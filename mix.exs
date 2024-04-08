@@ -1,8 +1,8 @@
 defmodule Fontawesome.MixProject do
   use Mix.Project
 
-  @github_url "https://github.com/Teifion/fontawesome_icons"
-  @version "0.0.4"
+  @source_url "https://github.com/Teifion/fontawesome_icons"
+  @version "0.0.5"
 
   def project do
     [
@@ -17,7 +17,28 @@ defmodule Fontawesome.MixProject do
       description: "Phoenix Components for FontAwesome icons",
       package: package(),
 
-      name: "Fontawesome Icons"
+      # Docs
+      name: "Fontawesome Icons",
+      docs: [
+        main: "Fontawesome",
+        api_reference: false,
+        # logo: "assets/teiserver-logo.svg",
+        source_ref: "v#{@version}",
+        source_url: @source_url,
+        extra_section: "GUIDES",
+        formatters: ["html"],
+        extras: extras(),
+        # groups_for_extras: groups_for_extras(),
+        # groups_for_modules: groups_for_modules(),
+        # groups_for_docs: groups_for_docs(),
+        skip_undefined_reference_warnings_on: ["CHANGELOG.md"]
+      ]
+    ]
+  end
+
+  defp extras do
+    [
+      "CHANGELOG.md": [title: "Changelog"]
     ]
   end
 
@@ -32,7 +53,9 @@ defmodule Fontawesome.MixProject do
   defp deps do
     [
       {:phoenix_live_view, ">= 0.18.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:makeup_eex, ">= 0.1.1", only: :docs},
+      {:makeup_diff, "~> 0.1", only: :docs}
     ]
   end
 
@@ -41,8 +64,8 @@ defmodule Fontawesome.MixProject do
       maintainers: ["Teifion Jordan"],
       licenses: ["MIT"],
       links: %{
-        "Changelog" => "#{@github_url}/blob/master/changelog.md",
-        "GitHub" => @github_url
+        "Changelog" => "#{@source_url}/blob/master/changelog.md",
+        "GitHub" => @source_url
       }
     ]
   end
