@@ -27,7 +27,7 @@ defmodule Fontawesome do
     free_only: true
   ```
 
-  Additionally contains lists of icon names with `Fontawesome.standard_icons/0` and `Fontawesome.brand_icons/0`
+  Additionally contains lists of icon names with `Fontawesome.regular_icons/0` and `Fontawesome.brand_icons/0`
   """
   use Phoenix.Component
 
@@ -39,8 +39,17 @@ defmodule Fontawesome do
   attr(:css, :string, default: nil)
 
   @doc """
-  Style can be regular, solid, light, thin or duotone
-  Weight defaults to nothing (classic) but can be set to sharp
+  Returns a fontawesome icon as a Phoenix.LiveView.Rendered object.
+
+  Requires:
+    `icon`: The fontawesome icon you wish to display, you do not need to prefix it with "fa-"
+
+  Optional arguments:
+    `style`: regular, solid, light, thin, duotone or brand
+    `weight`: classic or sharp
+    `size`: the fx weight class, you do not need to prefix it with "fa-"
+    `class`: css classes placed into the "class" attribute after the above classes
+    `css`: css placed into the "style" attribute
   """
   @spec icon(map) :: Phoenix.LiveView.Rendered.t()
   def icon(assigns) do
@@ -99,12 +108,20 @@ defmodule Fontawesome do
   @doc """
   Returns a list of all non-brand icons
   """
-  @spec standard_icons() :: [String.t()]
-  defdelegate standard_icons(), to: Fontawesome.StandardIcons
+  @spec regular_icons() :: [String.t()]
+  defdelegate regular_icons(), to: Fontawesome.RegularIcons
+
+  @doc false
+  require Logger
+
+  def standard_icons() do
+    Logger.warning("Fontawesome.standard_icons is being replaced by Fontawesome.regular_icons")
+    Fontawesome.RegularIcons.regular_icons()
+  end
 
   @doc """
   The version of FontAwesome this was built against (for the icon lists)
   """
   @spec version() :: String.t()
-  def version(), do: "6.5.1"
+  def version(), do: "6.6.0"
 end

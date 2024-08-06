@@ -9,8 +9,8 @@ defmodule FontawesomeTest do
     assert is_bitstring(hd(results))
   end
 
-  test "Standard icons" do
-    results = Fontawesome.standard_icons()
+  test "Regular icons" do
+    results = Fontawesome.regular_icons()
     assert is_list(results)
     assert not Enum.empty?(results)
     assert is_bitstring(hd(results))

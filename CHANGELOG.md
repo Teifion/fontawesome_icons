@@ -1,5 +1,7 @@
 # v0.0.6
 - Further docs improvements
+- Updated FA icon list to 6.6.0
+- Marked `Fontawesome.standard_icons` as deprecated in favour of `Fontawesome.regular_icons`
 
 # v0.0.5
 - Improved the docs
