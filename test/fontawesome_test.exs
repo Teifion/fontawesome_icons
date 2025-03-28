@@ -41,7 +41,7 @@ defmodule FontawesomeTest do
   end
 
   test "limited to free only" do
-    Application.put_env(:fontawesome, :free_only, true)
+    Application.put_env(:fontawesome_icons, :free_only, true)
 
     html = Phoenix.LiveViewTest.render_component(&Fontawesome.icon/1, icon: "icon1")
     assert html =~ "fa-fw fa-solid   fa-icon1"
@@ -51,6 +51,6 @@ defmodule FontawesomeTest do
 
     assert html =~ "fa-fw fa-solid   fa-icon2"
 
-    Application.put_env(:fontawesome, :free_only, false)
+    Application.put_env(:fontawesome_icons, :free_only, false)
   end
 end

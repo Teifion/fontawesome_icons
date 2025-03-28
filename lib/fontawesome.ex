@@ -5,7 +5,7 @@ defmodule Fontawesome do
   ```elixir
   def deps do
     [
-      {:fontawesome_icons, "~> 0.0.6"}
+      {:fontawesome_icons_icons, "~> 0.0.6"}
     ]
   end
   ```
@@ -23,7 +23,7 @@ defmodule Fontawesome do
 
   Has a single configuration option allowing you to register the free version only is used. When set this will (try to) override all non-free styling to be free only.
   ```elixir
-  config :fontawesome,
+  config :fontawesome_icons,
     free_only: true
   ```
 
@@ -54,7 +54,7 @@ defmodule Fontawesome do
   @spec icon(map) :: Phoenix.LiveView.Rendered.t()
   def icon(assigns) do
     style =
-      if Application.get_env(:fontawesome, :free_only, false) do
+      if Application.get_env(:fontawesome_icons, :free_only, false) do
         assigns[:style]
         |> fa_prefix()
         |> free_style()
@@ -63,7 +63,7 @@ defmodule Fontawesome do
       end
 
     weight =
-      if Application.get_env(:fontawesome, :free_only, false) do
+      if Application.get_env(:fontawesome_icons, :free_only, false) do
         assigns[:weight]
         |> fa_prefix()
         |> free_weight()
