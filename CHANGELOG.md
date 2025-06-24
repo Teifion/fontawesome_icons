@@ -1,3 +1,12 @@
+# v0.0.8
+- Icon class is now an `:any` type to allow lists of strings without raising a warning
+- Added `@rest` to icon tag attributes
+- Typo in main module documentation
+- Updated FA icon list to 6.7.2
+
+# v0.0.7
+- Fixed bug with free mode config not being applied correctly
+
 # v0.0.6
 - Further docs improvements
 - Updated FA icon list to 6.6.0

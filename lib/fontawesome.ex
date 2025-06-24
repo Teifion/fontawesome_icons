@@ -5,7 +5,7 @@ defmodule Fontawesome do
   ```elixir
   def deps do
     [
-      {:fontawesome_icons_icons, "~> 0.0.6"}
+      {:fontawesome_icons, "~> 0.0.8"}
     ]
   end
   ```
@@ -18,7 +18,15 @@ defmodule Fontawesome do
 
   <Fontawesome.icon icon="another-icon" weight="sharp" />
 
-  <Fontawesome.icon icon="everything" style="thin" weight="sharp" size="2x" class="my-css-class" css="border: 1px solid red;" />
+  <Fontawesome.icon
+    icon="everything"
+    style="thin"
+    weight="sharp"
+    size="2x"
+    class="my-css-class"
+    css="border: 1px solid red;"
+    phx-click="do-something"
+  />
   ```
 
   Has a single configuration option allowing you to register the free version only is used. When set this will (try to) override all non-free styling to be free only.
@@ -35,8 +43,9 @@ defmodule Fontawesome do
   attr(:style, :string, default: "regular")
   attr(:weight, :string, default: nil)
   attr(:size, :string, default: nil)
-  attr(:class, :string, default: nil)
+  attr(:class, :any, default: nil)
   attr(:css, :string, default: nil)
+  attr(:rest, :global)
 
   @doc """
   Returns a fontawesome icon as a Phoenix.LiveView.Rendered object.
@@ -79,7 +88,7 @@ defmodule Fontawesome do
       |> assign(:class, "fa-fw #{style} #{size} #{weight} #{icon_name} #{assigns[:class]}")
 
     ~H"""
-    <i class={@class} style={@css}></i>
+    <i class={@class} style={@css} {@rest}></i>
     """
   end
 
@@ -123,5 +132,5 @@ defmodule Fontawesome do
   The version of FontAwesome this was built against (for the icon lists)
   """
   @spec version() :: String.t()
-  def version(), do: "6.6.0"
+  def version(), do: "6.7.2"
 end

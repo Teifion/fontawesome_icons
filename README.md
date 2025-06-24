@@ -7,7 +7,7 @@ Note: The library says it addresses a specific version of Fontawesome but this i
 ```elixir
 def deps do
   [
-    {:fontawesome_icons, "~> 0.0.6"}
+    {:fontawesome_icons, "~> 0.0.8"}
   ]
 end
 ```
@@ -20,6 +20,14 @@ end
 
 <Fontawesome.icon icon="another-icon" weight="sharp" />
 
-<Fontawesome.icon icon="everything" style="thin" weight="sharp" size="2x" class="my-css-class" css="border: 1px solid red;" />
+<Fontawesome.icon
+  icon="everything"
+  style="thin"
+  weight="sharp"
+  size="2x"
+  class="my-css-class"
+  css="border: 1px solid red;"
+  phx-click="do-something"
+/>
 ```
 
